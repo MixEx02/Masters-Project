@@ -21,3 +21,7 @@ Gene Ontology Terms
 -BP: large processes accomplished by concerted action of multiple molecular activities. 
 -MF: Molecular level activities performed by gene products. Correspond to activities performed by individual gene products i.e a protein/RNA). GO MF terms represent activities
 -CC: Cellular location where molecular functions take place. 
+
+Functional Enrichment:
+
+-computational analysis technique that identifies whether a specific set of genes from an experiment are significantly overrepresented in a particular biological function, pathway, or Gene Ontology term compared to what would be expected by chance, essentially highlighting the key biological processes potentially involved in the studied condition; it helps interpret large gene lists by identifying enriched functional categories within them
