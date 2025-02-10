@@ -1,0 +1,23 @@
+Notes from "Organized Chaos CSV"
+-All single copy (1) gene values comes from Zhout et al. 2023
+-PAR regions are where X and Y pair, recombine, and segregate during meiosis
+-All genes in Y genes are from Zhou et al. 2023, ancestral genes come independent research (literature review and such)
+-Gene numbers in this highlighted color are off the median values per species
+
+
+-Ampliconic vs Multicopy: Ampliconic regions are mostly found on the sex chromosomes, particularly the male-specific region of the Y chromosome, while multi-copy sequences can be present on any chromosome. Ampliconic specifically refers to a large region on the sex chromosomes, particularly the Y chromosome, where multiple copies of genes are clustered together and often undergo frequent genetic exchange through a process called gene conversion. Ampliconic genes are typically multicopy whereas multicopy are not ampliconic
+
+
+-All genes in this list are autosomally derived (source: Zhou et al. 2023)
+-Macromolecule adaptor activity: brings together two or more macromolecules in contact
+-Once sequences are available, look into promoter regions for genes that are added into Y. Mostly retrocopies. Trying to identify the promoter regions and comparing it to the parental. I will look into it.
+-ELOA2Y/ELOA2 Present in common ancestor of all animals(https://www.genecards.org/cgi-bin/carddisp.pl?gene=ELOA2#:~:text=Orthologs%20for%20ELOA2%20Gene.%20Subsections:%20CladeOScope%20co-evolved,present%20in%20the%20common%20ancestor%20of%20animals.)
+-PRR23D2Y: An important paralog for this gene is PRR23D1 (https://www.genecards.org/cgi-bin/carddisp.pl?gene=PRR23D2). No ortholog with any other gene. 
+-IGY: Possibly referring to  IGKV1ORY-1 
+-DENRY:Ancestral gene is similar to SUI1 domain(also known as YNL244C) in yeast and in humans is known as EIF1B
+
+
+Gene Ontology Terms
+-BP: large processes accomplished by concerted action of multiple molecular activities. 
+-MF: Molecular level activities performed by gene products. Correspond to activities performed by individual gene products i.e a protein/RNA). GO MF terms represent activities
+-CC: Cellular location where molecular functions take place. 

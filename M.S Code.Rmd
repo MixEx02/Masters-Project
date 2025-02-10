@@ -1,0 +1,49 @@
+---
+title: "Master's Project"
+author: "Swopnil Adhikari"
+date: "2025-02-10"
+output: 
+  html_document:
+    df_print: paged
+---
+
+**Library Code**
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(enrichR)
+library(lme4)
+library(utils)
+```
+
+**Load CSV**
+
+```{r}
+genes <- read.csv("Literature Data.csv")
+```
+
+**Enrichment Code**
+
+```{r}
+setEnrichrSite("Enrichr")
+autosomal_genes <- c(genes$auto_gene)
+enrichr_library <- c("GO_Biological_Process_2023")
+enriched_autosmal <- enrichr(autosomal_genes, enrichr_library)
+```
+
+**Info Analysis Code**
+
+```{r}
+head(autosomal_genes)
+write.csv(enriched_autosmal[["GO_Biological_Process_2023"]], "BP Enriched Data V1.01.csv", row.names = FALSE)
+```
+
+**Enrichment Data Organization**
+
+```{r}
+enriched_autosmal <- as.data.frame(enriched_autosmal)
+colnames(enriched_autosmal)[colnames(enriched_autosmal) == "GO_Biological_Process_2023.Genes"] <- "gene_name" 
+colnames(enriched_autosmal)[colnames(enriched_autosmal) == "GO_Biological_Process_2023.Term"] <- "process"
+```
