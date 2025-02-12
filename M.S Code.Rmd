@@ -78,3 +78,11 @@ ggplot(count_data, aes(x = species, y = y_gene_copy_num, fill = y_gene)) +
   scale_fill_viridis_d()
 
 ```
+
+**Next Steps**
+
+```{r}
+#Linear model is not accurate because copy number is occurrences. LMM assumes graduality whereas copy number is not continuous. So GLMER and Poisson. No Lmer -> GLM. Copy number follows random. I'll finish my data collection and then create a presentation for what I'm testing, why and what we’re expecting. 
+
+
+```
