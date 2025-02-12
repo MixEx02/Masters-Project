@@ -37,7 +37,7 @@ enriched_autosmal <- enrichr(autosomal_genes, enrichr_library)
 
 ```{r}
 head(autosomal_genes)
-write.csv(enriched_autosmal[["GO_Biological_Process_2023"]], "BP Enriched Data V1.01.csv", row.names = FALSE)
+write.csv(enriched_autosmal[["GO_Biological_Process_2023"]], "BP Enriched Data V1.02.csv", row.names = FALSE)
 ```
 
 **Enrichment Data Organization**
@@ -46,4 +46,35 @@ write.csv(enriched_autosmal[["GO_Biological_Process_2023"]], "BP Enriched Data V
 enriched_autosmal <- as.data.frame(enriched_autosmal)
 colnames(enriched_autosmal)[colnames(enriched_autosmal) == "GO_Biological_Process_2023.Genes"] <- "gene_name" 
 colnames(enriched_autosmal)[colnames(enriched_autosmal) == "GO_Biological_Process_2023.Term"] <- "process"
+```
+
+**Analysis Set Up of Copy Number**
+
+```{r}
+count_data <- genes %>%
+  select(y_gene, species, y_gene_copy_num, y_gf, enrichment) %>%
+  filter(!is.na(y_gene_copy_num)) %>%
+  mutate(y_gene_copy_num = as.numeric(y_gene_copy_num))%>%
+  arrange(y_gene_copy_num)
+head(count_data)
+```
+
+**Bar Graph**
+
+```{r}
+ggplot(count_data, aes(x = species, y = y_gene_copy_num, fill = y_gene)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(
+    title = "Autosomal Derived Y-Linked Gene Copy Numbers Across Species",
+    x = "Species",
+    y = "Total Copies",
+    fill = "Gene"
+  ) +
+  theme(
+    axis.text.x = element_text(size = 12, angle = 45, hjust = 1),  # Rotate species labels
+    axis.text.y = element_text(size = 12),
+    plot.title = element_text(size = 10, face = "bold")
+  ) +
+  scale_fill_viridis_d()
+
 ```
